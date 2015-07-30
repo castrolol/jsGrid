@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<meta charset='utf-8'>
+<link rel='stylesheet' href='css/style.css'>
+<body>
+
+<div class="container-sun" id="Fundo">
+  <svg class="svg-sun" version="1.1" viewBox="0,0,100,100" preserveAspectRatio="xMinYMin meet">
+    <circle cx="50" cy="50" r="25" id="sun"></circle>
+  </svg>
+</div>
+
+
+<div class="consumo">Consumo <span id="soma"  size="10px"> </span> kWh</div>
+<script>
+
+</script>
+<div class="tabela"><form name="teste">
+<table border="1" align="center" cellpadding="4" cellspacing="2">
+<tr align="center">
+<td>Comodos</td>
+<td>Lampada</td>
+<td>Televisão</td>
+<td>Ventilador</td>
+<td>Ar-Condicionado</td>
+<td>Som</td>
+<td>Video Game</td>
+<td>DVD</td>
+<td>Computador</td>
+</tr>
+<tr align="center">
+<td>Sala</td>
+<td>
+<input type="radio" value="25" name="valor1" onclick="soma();">Ligar</input>
+<input type="radio" value="0" name="valor1" onclick="">Desligar</input>
+</td>
+
+<td>
+<input type="radio" value="25" name="valor2" onclick="soma();">Ligar</input>
+<input type="radio" value="0" name="valor2" onclick="">Desligar</input>
+</td>
+
+<td>
+<input type="radio" value="125" name="valor3" onclick="soma();">Ligar</input>
+<input type="radio" value="0" name="valor3" onclick="">Desligar</input>
+</td>
+
+<td>
+<input type="radio" value="35" name="valor4" onclick="soma();">Ligar</input>
+<input type="radio" value="0" name="valor4" onclick="">desligar</input>
+</td>
+
+<td>
+<input type="radio" value="65" name="valor5" onclick="soma();">Ligar</input>
+<input type="radio" value="0" name="valor5" onclick="">desligar</input>
+</td>
+
+<td>
+<input type="radio" value="86" name="valor6" onclick="soma();">Ligar</input>
+<input type="radio" value="0" name="valor6" onclick="">desligar</input>
+</td>
+
+<td>
+<input type="radio" value="74" name="valor7" onclick="soma();">Ligar</input>
+<input type="radio" value="" name="valor7" onclick="">desligar</input>
+</td>
+
+<td>
+<input type="radio" value="45" name="valor8" onclick="soma();">Ligar</input>
+<input type="radio" value="0" name="valor8" onclick="">desligar</input>
+</td>
+
+</table>
+<script>
+function soma() {
+
+var form = document.forms['teste'];
+var campos = form.elements;
+var soma = 0;
+
+for (var n=0;n<campos.length;n++) {
+
+  if ((campos[n].type == "radio") && (campos[n].checked)) {
+  
+  var numero = campos[n].value;
+  soma += parseInt(numero);
+  
+  }
+
+}
+
+document.getElementById("soma").innerHTML=soma;
+}
+
+</script>
+</form>
+</div>
+<div class="termometro"></div>
+<script type="text/javascript" src='js/Calculadora.js'></script>
+<script type="text/javascript" src='js/Termometro.js'></script>
+<script type="text/javascript" src='js/start.js'></script>
+<script type="text/javascript" src='js/consumo.js'></script>
+</body>
+</html> 
